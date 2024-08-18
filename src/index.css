@@ -3,3 +3,18 @@
   line-height: 1.5;
   font-weight: 400;
 }
+.containerCards{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+
+}
+
+.cardCom{
+  transition: transform 0.9s ease-in-out  ;
+}
+.cardCom:hover{
+  transform: rotateY(360deg);
+  
+
+}
