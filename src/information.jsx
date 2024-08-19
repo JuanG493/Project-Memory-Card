@@ -8,7 +8,7 @@
     { id: 7, name: "hunter-x-hunter" },
     { id: 8, name: "sword-art-online" },
     { id: 9, name: "death-note" },
-    { id: 10, name: "gintama" },
+    { id: 10, name: "dragon-ball" },
     { id: 11, name: "one-punch-man" },
     { id: 12, name: "parasyte" }
 ];

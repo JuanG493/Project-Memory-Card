@@ -1,20 +1,55 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+#root {
+  font-family: "Rubik Maps", system-ui;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.5;
   font-weight: 400;
+
 }
-.containerCards{
+
+.dataInfo {
+  width: 100%;
+}
+
+.containerCards {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
+}
+
+.cardCom {
+  transition: opacity 2.5s ease-in-out;
+}
+
+.cardCom:hover {
+  opacity: 0.5;
+  scale: 0.99;
+}
+
+@media only screen and (max-device-width:1290px) {
+  .dataInfo {
+    flex-grow: 2;
+  }
+
+  .containerCards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+
 
 }
 
-.cardCom{
-  transition: transform 0.9s ease-in-out  ;
-}
-.cardCom:hover{
-  transform: rotateY(360deg);
-  
+@media only screen and (max-device-width:600px) {
+  .dataInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
 
 }
