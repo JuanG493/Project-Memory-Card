@@ -1,15 +1,15 @@
 import { Card } from "react-bootstrap";
-export default function CardComp({ url, title, handlerClick}) {
+export default function CardComp({ url, title, info, handlerClick}) {
 
     return (
 
         <Card className="mb-2 bg-dark cardCom"
-            style={{ width: '70%' }}
+            style={{ width: '78%', }}
             onClick={() => handlerClick(title)}
             >
-            <Card.Img variant="top" src={url} />
-            <Card.Body>
-                <Card.Title className="text-center text-warning s-1">{title}</Card.Title>
+            <Card.Img variant="top" src={url} title={info}  />
+            <Card.Body >
+                <Card.Title className="text-center text-warning s-1 ">{title.split('-').join(' ').toUpperCase()}</Card.Title>
             </Card.Body>
         </Card>
 

@@ -84,10 +84,10 @@ function Game() {
             const responses = await Promise.all(listNames.map(async elm => {
                 let raw = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${elm.name}`, { mode: "cors" })
                 let infoObj = await raw.json();
-                let random = Math.floor(Math.random()* infoObj.data.length)
-                console.log(random);
-                
-                return infoObj.data[random].attributes;
+                let random = Math.floor(Math.random()* (infoObj.data.length-1))
+                let animeInfo = infoObj.data[random].attributes;
+                animeInfo["titleD"] = elm.name;
+                return animeInfo;
             }))
             return responses;
         }
@@ -111,7 +111,8 @@ function Game() {
                         <CardComp
                             key={anime.slug}
                             url={anime.posterImage.small}
-                            title={anime.canonicalTitle}
+                            title={anime.titleD}
+                            info={anime.canonicalTitle}
                             handlerClick={handleOnClick} >
                         </CardComp>
                     )
